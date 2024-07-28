@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자료형 실습문제</title>
+</head>
+<body>
+    <h1>1. object 변수 선언 실습</h1>
+    <p>
+        <ul>
+            <li>
+                자료형을 이용해 각자를 소개할 수 있는 object 형태의 변수를 선언해주세요.
+            </li>
+        </ul>
+    </p>
+
+    <h1>2. 형변환 실습</h1>
+    <p>
+        <ul>
+            <li>변수 mathScore, engScore 를 만들어 주세요.</li>
+            <li>mathScore = "77"; engScore = "88";</li>
+            <li>
+                시험 점수 평균을 계산하여 avgScore 에 저장하고,<br>
+                이를 console.log(avgScore)를 이용해서 콘솔창에서 확인하는
+                프로그램을 작성해보세요.
+            </li>
+            <li>형 변환을 사용하여 평균 점수가 정확하게 나와야 합니다!</li>
+        </ul>
+    </p>
+
+    <script>
+        const profile = {
+            name: '이몽룡',
+            age: 18,
+            like: ['강아지', '고양이'],
+            isMarried: true,
+            girlfreind: {name: '성춘향', age: 16}
+        }
+
+        console.log('profile >> ', profile);
+
+        // ---------------------------------------------------------
+        console.log('--------------------------');
+
+        const mathScore = '77'
+        const engScore = '88';
+
+        console.log('mathScore type >> ', typeof(mathScore));
+        console.log('engScore type >> ', typeof(engScore));
+
+        const avgScore = (Number(mathScore) + Number(engScore)) / 2;
+
+        console.log('avgScore >> ', avgScore);
+        
+        
+    </script>
+</body>
+</html>
