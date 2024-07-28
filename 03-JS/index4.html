@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문 실습</title>
+</head>
+<body>
+    <h1>실습문제 2</h1>
+    <p>let now = new Date().getHours();</p>
+    <p>
+        위의 코드는 현재 '시간' 만을 받아오는 코드입니다. <br>
+        0 ~ 23 까지의 숫자를 반환하고 0이 자정, 12가 정오를 뜻합니다. <br>
+        now 라는 변수에는 현재 시간에 대한 숫자가 저장이 되어있겠죠?
+    </p>
+    <ul>
+        <li>삼항 연산자로 지금이 오전인지 오후인지 콘솔창에 출력해보세요!</li>
+    </ul>
+
+    <script>
+        const now = new Date().getHours();
+        console.log('now >> ', now); // 19
+
+        now < 12 ? console.log('오전') : console.log('오후');
+
+    </script>
+</body>
+</html>
