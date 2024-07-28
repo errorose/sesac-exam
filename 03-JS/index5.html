@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 실습</title>
+</head>
+<body>
+    <h1>실습문제 1 - 배수 찾기</h1>
+    <ul>
+        <li>10000 까지의 숫자 중에서</li>
+        <li>13의 배수이면서 홀수인 숫자를 찾아 봅시다!</li>
+        <li>+ prompt 를 이용해서 <br> 
+            입력받은 수 까지 13의 배수이면서 홀수인 숫자를 찾는 프로그램을 만들어 봅시다!</li>
+    </ul>
+
+    <script>
+        // 기본
+        let num = 10000;
+        for(let i = 0; i < num; i++){
+            if(i % 13 == 0 && i % 2 == 1){
+                console.log(i);
+            }
+        }
+
+        // 심화
+        let number = prompt('1 ~ 10000 사이의 숫자를 입력해주세요.');
+        console.log(`입력한 숫자는 ${number}입니다.`);
+
+        for(let i = 1; i <= number; i++){
+            if(i % 13 == 0 && i % 2 == 1){
+                console.log(i);
+            }
+        }
+    </script>
+</body>
+</html>
