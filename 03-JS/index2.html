@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 만들기 실습</title>
+</head>
+<body>
+    <h1>함수 만들기 1</h1>
+    <p>
+        <ul>
+            <li>multifly() 함수를 함수 선언문 형식으로 만들어주세요!</li>
+            <li>
+                조건
+                <ul style="list-style-type: disc;">
+                    <li>매개변수로 두 개의 숫자를 입력받기</li>
+                    <li>두 인자의 곱을 '<span style="color: red;">반환</span>' 하는 함수를 정의</li>
+                </ul>
+            </li>
+            <li>
+                콘솔창에 출력하고 싶다면 아래처럼 테스트 해보기
+                <ul style="list-style-type: disc;">
+                    <li>console.log(multifly(3, 7)); <span style="color: green;">// 21</span> </li>
+                    <li>console.log(multifly(2, 2)); <span style="color: green;">// 4</span> </li>
+                </ul>
+            </li>
+        </ul>
+    </p>
+
+    <h1>함수 만들기 2</h1>
+    <ul>
+        <li>square() 함수를 함수 표현식을 이용해서 만들어주세요!</li>
+        <li>
+            조건
+            <ul style="list-style-type: disc;">
+                <li>매개변수로 하나의 숫자를 입력받기</li>
+                <li>입력받은 수의 제곱을 콘솔창에 출력하는 함수 정의</li><br>
+                <li>
+                    콘솔창에 출력하고 싶다면 아래처럼 테스트 해보기
+                        <ul style="list-style-type: disc;">
+                            <li>square(4) <span style="color: green;">// 16</span></li>
+                            <li>square(11) <span style="color: green;">// 121</span></li>
+                            <li>square(5) <span style="color: green;">// 25</span></li>
+                        </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        function multifly(num1, num2){
+            return num1 * num2;
+        }
+
+        console.log(multifly(3, 7));
+        console.log(multifly(2, 2));
+
+        console.log('----------------------------------');
+
+        const square = function(num){
+            return num**2;
+        }
+
+        console.log('square(4) >> ', square(4));
+        console.log('square(11) >> ', square(11));
+        console.log('square(5) >> ', square(5));
+        
+    </script>
+</body>
+</html>
