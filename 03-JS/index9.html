@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장 메소드와 내장객체 실습</title>
+</head>
+<body>
+    <h1>내장 메소드 실습</h1>
+    <p>let fruits1 = ["사과", "딸기", "파인애플", "수박", "참외", "오렌지", "자두", "망고"]</p>
+    <p>let fruits2 = ["수박", "사과", "참외", "오렌지", "파인애플", "망고"]</p>
+    <ul>
+        <li>두 배열에서 동일한 요소만을 가지는 배열 same 만들기</li>
+        <li>두 배열에서 서로 다른 요소만을 가지는 배열 diff 만들기</li>
+        <br>
+        <p>참고)) fruits1은 fruits2를 포함하고 있습니다.</p>
+    </ul>
+
+    <script>
+        let fruits1 = ["사과", "딸기", "파인애플", "수박", "참외", "오렌지", "자두", "망고"];
+        let fruits2 = ["수박", "사과", "참외", "오렌지", "파인애플", "망고"];
+
+        // for문
+        let same = [];
+        let diff = [];
+
+        for(let i = 0; i < fruits1.length; i++){
+            if(fruits2.includes(fruits1[i])){
+                same.push(fruits1[i]);
+            }else{
+                diff.push(fruits1[i]);
+            }
+        }
+        console.log('same >>', same);
+        console.log('diff >> ', diff);
+
+        // filter
+        let same2 = fruits1.filter((item)=>{
+            return fruits2.includes(item);
+        });
+
+        let diff2 = fruits1.filter((item)=>{
+            return !fruits2.includes(item);
+        });
+
+        console.log('same2 >> ', same2);
+        console.log('diff2 >> ', diff2);
+
+    </script>
+</body>
+</html>
