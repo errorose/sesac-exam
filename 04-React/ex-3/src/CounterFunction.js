@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const CounterFunction = (props)=>{
+const CounterFunction = ()=>{
 
     const [number, setNumber] = useState(0);
 
