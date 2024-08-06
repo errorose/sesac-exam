@@ -10,6 +10,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>[JSX 실습]</h1>
       <h2>
         제 반려 동물의 이름은 <span style={underlineStyle}>{name}</span>입니다.<br />
         <span style={underlineStyle}>{name}</span>는 <span style={underlineStyle}>{animal}</span>입니다.
