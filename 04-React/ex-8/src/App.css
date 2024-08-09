@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+.post-header{
+  background-color: skyblue;
+  height: 40px;
+  font-size: 30px;
+  padding: 5px;
+}
+
+.post-list{
+  background-color: rgb(225, 238, 243);
+  border-radius: 10px;
+  padding: 5px;
+}
