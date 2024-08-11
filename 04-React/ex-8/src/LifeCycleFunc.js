@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 
 export default function LifeCycleFunc() {
     const fakePosts = [
@@ -55,13 +56,18 @@ export default function LifeCycleFunc() {
         },
     ];
 
-      const [posts, setPosts] = useState([]);
+    const [posts, setPosts] = useState([]);
 
-      useEffect(()=>{
-        setTimeout(()=>{
-          setPosts(fakePosts);
-        }, 2000);
-      }, []);
+    useEffect(()=>{
+      setTimeout(()=>{
+        // setPosts(fakePosts);
+        axios.get('https://jsonplaceholder.typicode.com/posts')
+        .then((res)=>{
+          console.log('res.data >> ', res.data);
+          setPosts(res.data);
+        })
+      }, 2000);
+    }, []);
 
   return (
     <div className='post-container'>
