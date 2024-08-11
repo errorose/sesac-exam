@@ -53,29 +53,32 @@ export default function LifeCycleFunc() {
           title: "optio molestias id quia eum",
           body: "quo et expedita modi cum officia vel magni doloribus qui repudiandae vero nisi sit quos veniam quod sed accusamus veritatis error",
         },
-      ];
+    ];
 
-      const [list, setList] = useState([fakePosts]);
-      console.log(list);
+      const [posts, setPosts] = useState([]);
+
+      useEffect(()=>{
+        setTimeout(()=>{
+          setPosts(fakePosts);
+        }, 2000);
+      }, []);
 
   return (
-    <div>
+    <div className='post-container'>
         <div className='post-header'>
             💌 Post List
         </div>
         <div>
             <div>
-                {fakePosts.map((ele)=>{
+              {posts.length === 0 ? (<p>loading...</p>) : (posts.map((ele)=>{
                     return(
-                        <div key={ele.id} style={{margin: '20px'}} className='post-list'>
-                            <span style={{color: 'darkblue'}}>No.{ele.id}</span> 
-                            <span style={{color: 'gray'}}> - {ele.title}</span>  
-                            <div style={{margin: '20px'}}>
-                                <b>{ele.body}</b>
-                            </div>
+                        <div className='post-list' key={ele.id}>
+                            <span className='post-id'>No.{ele.id}</span> 
+                            <span className='post-title'> - {ele.title}</span>  
+                            <div className='post-body'>{ele.body}</div>
                         </div>
                     )
-                })}
+                }))}
             </div>
         </div>
     </div>

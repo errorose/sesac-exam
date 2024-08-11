@@ -2,15 +2,45 @@
   text-align: center;
 }
 
+.post-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .post-header{
+  width: 100%;
   background-color: skyblue;
-  height: 40px;
-  font-size: 30px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bolder;
+  color: white;
+  line-height: 50px;
   padding: 5px;
 }
 
 .post-list{
-  background-color: rgb(225, 238, 243);
   border-radius: 10px;
-  padding: 5px;
+  background-color: rgb(225, 238, 243);
+  box-shadow: 5px 5px 10px 5px #d4d4d4;
+  padding: 20px;
+  margin: 30px;
+  width: 800px;
+  text-align: center;
 }
+
+.post-id{
+  color: rgb(100, 100, 227);
+}
+
+.post-title{
+  color: gray;
+}
+
+.post-body{
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: left;
+}
+
