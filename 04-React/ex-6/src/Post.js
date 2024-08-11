@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 export default function Board(){
     const [posts, setPosts] = useState([]);
-
     const [writer, setWriter] = useState('');
     const [title, setTitle] = useState('');
+    
 
     // 작성글 추가
     const addPost = (e)=>{
@@ -22,6 +22,11 @@ export default function Board(){
         setPosts(newPosts);
         setWriter('');
         setTitle('');
+    }
+
+    // 검색 기능
+    const selectPosts = ()=>{
+        
     }
     
     return(
@@ -76,6 +81,11 @@ export default function Board(){
                         }
                     </tbody>
                 </table>
+            </div>
+            <hr />
+            <div>
+                <p>검색결과</p>
+                {}
             </div>
         </>
     )
