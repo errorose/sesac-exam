@@ -5,8 +5,8 @@ export default function Board(){
     const [writer, setWriter] = useState('');
     const [title, setTitle] = useState('');
     const [searchOption, setSearchOption] = useState('writer');
-    const [searchText, setSearchText] = useState(''); 
-    const [searchFilter, setSearchFilter] =  useState([]);
+    const [searchText, setSearchText] = useState(''); // 검색 내용
+    const [searchFilter, setSearchFilter] =  useState([]); // 검색 결과
 
     // 작성글 추가
     const addPost = (e)=>{
@@ -27,12 +27,24 @@ export default function Board(){
     }
 
     // 조건 검색    
-    const searchPostSelect = ()=>{
-        
+    const handleSearch = ()=>{
+        if(searchText.trim().length === 0) return;
+
+        const filtered = posts.filter((post) => {
+            if(searchOption === 'writer'){
+                return post.writer.includes(searchText);
+            }else if(searchOption === 'title'){
+                return post.title.includes(searchText);
+            }else{
+                return false;
+            }
+        });
+        setSearchFilter(filtered);
+        setSearchText('');
     }
 
     // 전체 검색 
-    const searchPostAll = ()=>{
+    const handleSearchAll = ()=>{
         setSearchFilter(posts)
     }
     
@@ -58,7 +70,12 @@ export default function Board(){
                 <button onClick={addPost}>작성</button>
             </form>
             <div className="search">
-                <select>
+                <select
+                    value={searchOption}
+                    onChange={(e) => {
+                        setSearchOption(e.target.value);
+                    }}    
+                >
                     <option value="writer">작성자</option>
                     <option value="title">제목</option>
                 </select>
@@ -67,11 +84,11 @@ export default function Board(){
                     placeholder="검색어"
                     value={searchText}
                     onChange={(e)=>{
-                        setSearchText(e.target.value.toLowerCase());
+                        setSearchText(e.target.value);
                     }}
                 />
-                <button onClick={searchPostSelect}>검색</button>
-                <button onClick={searchPostAll}>전체</button>
+                <button onClick={handleSearch}>검색</button>
+                <button onClick={handleSearchAll}>전체</button>
             </div>
             <div className="result">
                 <table border="1" cellPadding="5" cellSpacing="0">
@@ -111,7 +128,7 @@ export default function Board(){
                     </thead>
                     <tbody>
                         {
-                            posts.map((post)=>{
+                            searchFilter.map((post)=>{
                                 return(
                                     <tr key={post.id}>
                                         <td>{post.id}</td>
