@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <!-- Axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1><%= title %></h1>
+    
+    <button onclick="getRandomDog();">강아지 사진 가져오기</button>
+    <div id="resultBox"></div>
+
+    <script>
+        const resultBox = document.querySelector('#resultBox');
+
+        async function getRandomDog(){
+            console.log('btn click');
+
+            try{
+                const response = await axios.get('https://dog.ceo/api/breeds/image/random');
+                console.log('response >> ', response);
+
+                const imgUrl = response.data.message; // 강아지 이미지의 URL
+                const dogImg = `<img src="${imgUrl}" alt="Random Dog" />`
+                resultBox.innerHTML = dogImg;
+            }catch(error){
+                console.error(error);
+                resultBox.textContent = '알 수 없는 오류로 강아지 사진을 불러오지 못했습니다...'
+                resultBox.style.color = 'red'
+            }
+        }
+    </script>
+</body>
+</html>
